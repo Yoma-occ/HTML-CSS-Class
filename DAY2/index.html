@@ -1,0 +1,528 @@
+<!-- 
+================================================================================
+LINE 1: <!DOCTYPE html>
+================================================================================
+This is the HTML5 Document Type Declaration.
+It must be the very first line of every HTML5 document.
+It tells the browser to use modern HTML standards (not quirks mode).
+Always use uppercase DOCTYPE for consistency (though lowercase also works).
+-->
+<!DOCTYPE html>
+
+<!-- 
+================================================================================
+LINE 2: <html lang="en">
+================================================================================
+Root element of the entire HTML document.
+The lang="en" attribute declares the primary language as English.
+This improves accessibility (screen readers), SEO, and browser translation features.
+Always include the lang attribute on the opening <html> tag.
+-->
+<html lang="en">
+
+<!-- 
+================================================================================
+LINE 3: <head>
+================================================================================
+Contains metadata and resources for the document.
+Nothing inside <head> is displayed directly on the page.
+It must come before the <body> tag.
+-->
+<head>
+
+<!-- 
+ ================================================================================
+ LINE 4: <meta charset="UTF-8">
+ ================================================================================
+ Defines the character encoding as UTF-8.
+ This supports almost all characters and emojis from every language.
+ Should be placed early in the <head> section.
+ Without it, special characters may display incorrectly.
+ -->
+<meta charset="UTF-8">
+
+<!-- 
+ ================================================================================
+ LINE 5: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ ================================================================================
+ Critical meta tag for responsive (mobile-friendly) design.
+ width=device-width → Uses the device's actual screen width.
+ initial-scale=1.0 → Starts at 100% zoom (no auto-zoom on mobile).
+ Essential for modern websites. Without it, mobile users see a zoomed-out version.
+ -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- 
+ ================================================================================
+ LINE 6: <title>Eras Furniture &amp; Landscape</title>
+ ================================================================================
+ Sets the text shown in the browser tab and search engine results.
+ &amp; is the HTML entity for the ampersand (&) character.
+ Always use entities for special characters in HTML text.
+ Keep titles clear, concise, and descriptive (50-60 characters ideal).
+ -->
+<title>Eras Furniture &amp; Landscape</title>
+
+<!-- 
+ ================================================================================
+ LINE 7: <style>
+ ================================================================================
+ Opens the internal CSS section.
+ All styling rules between <style> and </style> apply to this page only.
+ For larger projects we move CSS to external .css files, but internal CSS 
+ is excellent for teaching and small demos.
+ -->
+<style>
+
+/* 
+ ================================================================================
+ CSS SECTION: UNIVERSAL RESET
+ ================================================================================
+ The * selector targets EVERY element on the page.
+ This is a common "CSS Reset" technique to remove default browser spacing.
+ */
+* {
+/* Removes default margin from all elements (e.g. paragraphs, headings) */
+margin: 0;
+/* Removes default padding from all elements */
+padding: 0;
+/* Makes width and height calculations include padding and border */
+box-sizing: border-box;
+ }
+
+/* 
+ ================================================================================
+ CSS SECTION: HERO SECTION
+ ================================================================================
+ The hero is the large full-screen introductory section with video background.
+ */
+
+/* 
+ .hero class styles the main hero container.
+ position: relative allows child elements to be positioned absolutely inside it.
+ */
+.hero {
+position: relative;
+/* 100% of the parent width */
+width: 100%;
+/* 100vh = 100% of the viewport height (full screen height) */
+height: 100vh;
+/* Hides any content that overflows the container */
+overflow: hidden;
+ }
+
+/* 
+ Styles the <video> element inside .hero.
+ position: absolute removes it from normal flow so we can layer it.
+ */
+.hero video {
+position: absolute;
+top: 0;
+left: 0;
+/* Ensures video covers the full width even if slightly cropped */
+min-width: 100%;
+/* Ensures video covers the full height even if slightly cropped */
+min-height: 100%;
+/* Scales the video nicely while maintaining aspect ratio */
+object-fit: cover;
+/* Places video behind other content (z-index layering) */
+z-index: 0;
+ }
+
+/* 
+ .hero::before creates a dark overlay on top of the video.
+ This makes white text readable over the bright video.
+ */
+.hero::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+/* Semi-transparent black overlay (40% opacity) */
+background: rgba(0, 0, 0, 0.4);
+/* Places overlay above the video but below the text */
+z-index: 1;
+ }
+
+/* 
+ .hero-content holds the heading, paragraph, and buttons.
+ position: relative + z-index: 2 brings it above the overlay.
+ */
+.hero-content {
+position: relative;
+z-index: 2;
+color: white;
+text-align: center;
+/* Vertically centers the content using top + transform trick */
+top: 50%;
+transform: translateY(-50%);
+padding: 0 20px;
+/* Adds subtle shadow so text remains readable over video */
+text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+ }
+
+/* Styles the main heading inside hero */
+.hero-content h1 {
+color: orange;
+font-size: 3rem;
+margin-bottom: 1rem;
+ }
+
+/* Styles the paragraph inside hero */
+.hero-content p {
+font-size: 1.2rem;
+margin-bottom: 2rem;
+max-width: 600px;
+/* Centers the paragraph horizontally */
+margin-left: auto;
+margin-right: auto;
+ }
+
+/* Container for the call-to-action buttons */
+.hero-buttons {
+display: flex;
+justify-content: center;
+/* Allows buttons to wrap to next line on small screens */
+flex-wrap: wrap;
+gap: 16px;
+ }
+
+/* 
+ ================================================================================
+ CSS SECTION: BUTTONS
+ ================================================================================
+ */
+
+/* Base button style used by both light and dark buttons */
+.btn {
+/* Removes default underline from links */
+text-decoration: none;
+/* Semi-transparent white background */
+background-color: rgba(146, 146, 146, 0.6);
+border: 2px solid rgb(255, 0, 0);
+color: rgb(255, 255, 255);
+padding: 12px 28px;
+font-size: 1.1rem;
+/* Makes buttons pill-shaped */
+border-radius: 30px;
+/* Smooth transition for hover effects */
+transition: all 0.3s ease;
+cursor: pointer;
+ }
+
+/* Hover state for normal buttons */
+.btn:hover {
+background-color: rgb(0, 0, 0);
+color: black;
+ }
+
+/* Dark variant of the button */
+.btn-dark {
+background-color: rgba(146, 146, 146, 0.6);
+border-color: rgb(255, 0, 0);
+ }
+
+/* Hover state for dark buttons */
+.btn-dark:hover {
+background-color: black;
+color: white;
+border-color: white;
+ }
+
+ .btn-light {
+background-color: rgba(146, 146, 146, 0.6);
+color: white;
+}
+
+.btn-light:hover {
+    background-color:white;
+    color: black;
+}
+
+/* 
+ ================================================================================
+ CSS SECTION: CARD SECTION
+ ================================================================================
+ */
+
+.card-section {
+background-color: #000000;
+padding: 80px 24px;
+text-align: center;
+ }
+
+.card-section h2 {
+font-size: 2rem;
+margin-bottom: 48px;
+color: #222;
+ }
+
+/* 
+ .card-container uses CSS Grid for responsive card layout.
+ repeat(auto-fit, minmax(260px, 1fr)) creates as many columns as fit,
+ with each column at least 260px wide.
+ */
+.card-container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 60px;
+max-width: 1200px;
+margin: 0 auto;
+ }
+
+/* Individual card styling */
+.card {
+background-color: rgb(46, 46, 46);
+border-radius: 16px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+/* Initial state for scroll animation (hidden below) */
+transform: translateY(40px);
+opacity: 0;
+/* Smooth animation when .show class is added */
+transition: transform 0.6s ease, opacity 0.6s ease;
+ }
+
+/* Class added by JavaScript when card scrolls into view */
+.card.show {
+transform: translateY(0);
+opacity: 1;
+ }
+
+/* Hover lift effect */
+.card:hover {
+transform: translateY(-8px);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+ }
+
+.card img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+ }
+
+.card-content {
+padding: 20px;
+ }
+
+.card-content h3 {
+font-size: 1.3rem;
+margin-bottom: 8px;
+color: #fffdfd;
+ }
+
+.card-content p {
+font-size: 0.95rem;
+color: #666;
+line-height: 1.6;
+margin-bottom: 16px;
+ }
+
+.card-content a {
+text-decoration: none;
+color: white;
+background-color: #6b4600;
+padding: 10px 20px;
+border-radius: 8px;
+display: inline-block;
+transition: background-color 0.3s ease;
+ }
+
+.card-content a:hover {
+background-color: #0056b3;
+ }
+
+/* 
+ ================================================================================
+ CSS SECTION: FOOTER
+ ================================================================================
+ */
+
+.footer {
+background-color: #111;
+color: white;
+width: 100%;
+padding: 32px 24px;
+text-align: center;
+ }
+
+.footer p {
+font-size: 0.9rem;
+color: #aaa;
+ }
+
+/* 
+ ================================================================================
+ CSS SECTION: RESPONSIVE DESIGN (MEDIA QUERY)
+ ================================================================================
+ Applies different styles when screen width is 640px or smaller.
+ */
+@media (max-width: 640px) {
+.hero-content h1 {
+font-size: 2rem;
+ }
+
+.hero-content p {
+font-size: 1rem;
+ }
+
+.card-section {
+padding: 48px 16px;
+ }
+ }
+
+</style>
+</head>
+
+<!-- 
+================================================================================
+LINE 8 (after </head>): <body>
+================================================================================
+Contains all visible content of the webpage.
+-->
+<body>
+
+<!-- 
+ ================================================================================
+ HERO SECTION (Full-screen video background)
+ ================================================================================
+ -->
+<section class="hero">
+<!-- 
+ Video element with modern attributes:
+ autoplay + muted + loop = common pattern for background videos
+ playsinline = required for autoplay on iOS Safari
+ -->
+<video autoplay muted loop playsinline>
+<!-- 
+ Source file for the video.
+ In a real project this path must point to an actual video file.
+ -->
+<source src="video/hero-landscape-bg12.mp4" type="video/mp4">
+<!-- Fallback text shown if browser doesn't support video -->
+ Your browser does not support the video tag.
+</video>
+
+<div class="hero-content">
+<h1>Your Place for Everything Furniture and Landscape</h1>
+<p>We design and create inviting outdoor environments for your home and gatherings.</p>
+
+<div class="hero-buttons">
+<!-- Internal link that scrolls to #cards section -->
+<a href="#cards" class="btn">Learn More</a>
+<!-- External links to other pages (cheatsheets) -->
+<a href="/DAY2/cheatsheets/COITB_JavaScript_Exam_Cheat_Sheet.pdf" class="btn btn-dark">JS Cheatsheet</a>
+<a href="/DAY2/cheatsheets/COITB_CSS_Exam_Cheat_Sheet.pdf" class="btn btn-light">CSS Cheatsheet</a>
+</div>
+</div>
+</section>
+
+<!-- 
+ ================================================================================
+ SERVICES / CARDS SECTION
+ ================================================================================
+ id="cards" is used by the "Learn More" button for smooth scrolling.
+ -->
+<section id="cards" class="card-section">
+<h2>Our Featured Services</h2>
+<div class="card-container">
+
+<!-- Card 1 -->
+<div class="card">
+<img src="image/outside-furniture-card.jpeg" alt="Shrubs and Plants">
+<div class="card-content">
+<h3>Shrubs and Plants</h3>
+<p>Carefully selected greenery and flowering plants to bring life and color to your outdoor spaces.</p>
+<a href="#">Read More</a>
+</div>
+</div>
+
+<!-- Card 2 -->
+<div class="card">
+<img src="image/outside-furniture-card-2.jpeg" alt="Backyard Coverings">
+<div class="card-content">
+<h3>Backyard Coverings</h3>
+<p>Pergolas, shade sails, and patio covers that transform your backyard into a comfortable retreat.</p>
+<a href="#">Read More</a>
+</div>
+</div>
+
+<!-- Card 3 -->
+<div class="card">
+<img src="image/hero-landscaping-bg11.jpeg" alt="Walking Paths">
+<div class="card-content">
+<h3>Walking Paths</h3>
+<p>Beautifully laid pathways using natural stone, pavers, and creative landscape design.</p>
+<a href="#">Read More</a>
+</div>
+</div>
+
+<!-- Card 4 -->
+<div class="card">
+<img src="image/outside-landscape-card.jpeg" alt="Ambience and Lighting">
+<div class="card-content">
+<h3>Ambience and Lighting</h3>
+<p>Strategic outdoor lighting to create the perfect mood for evening gatherings and relaxation.</p>
+<a href="#">Read More</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- 
+ ================================================================================
+ FOOTER SECTION
+ ================================================================================
+ -->
+<footer class="footer">
+<!-- 
+ &copy; is the copyright symbol entity.
+ <span id="year"></span> will be filled dynamically by JavaScript.
+ -->
+<p>&copy; <span id="year"></span> Eras Furniture &amp; Landscape. All rights reserved.</p>
+</footer>
+
+<!-- 
+ ================================================================================
+ JAVASCRIPT SECTION
+ ================================================================================
+ All interactive behavior is added here.
+ -->
+<script>
+// Smooth scrolling for any link that starts with #
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+anchor.addEventListener("click", function(e) {
+e.preventDefault(); // Stop default jump behavior
+var target = document.querySelector(this.getAttribute("href"));
+if (target) {
+target.scrollIntoView({ behavior: "smooth" }); // Smooth scroll animation
+ }
+ });
+ });
+
+// Scroll-reveal animation for cards
+var cards = document.querySelectorAll(".card"); 
+
+function revealCards() {
+var triggerBottom = window.innerHeight * 0.85; // Trigger point (85% down the screen)
+cards.forEach(function(card) {
+var cardTop = card.getBoundingClientRect().top;
+if (cardTop < triggerBottom) {
+card.classList.add("show"); // Add .show class to trigger CSS animation
+ }
+ });
+ }
+
+// Run animation on scroll and once on page load
+window.addEventListener("scroll", revealCards);
+revealCards();
+
+// Dynamically insert current year in footer
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
+
