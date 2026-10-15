@@ -1,0 +1,349 @@
+<!-- 
+  HTML5 Document Type Declaration.
+  This tells the browser to render the page using modern HTML5 standards.
+-->
+
+<!doctype html>
+
+<!-- 
+  Root element of the HTML document.
+  The lang="en" attribute improves accessibility and helps search engines 
+  understand the language of the page.
+-->
+<html lang="en">
+  <head>
+    <!-- 
+    Character encoding set to UTF-8.
+    This ensures all characters (including special symbols and international text) 
+    display correctly.
+  -->
+    <meta charset="UTF-8" />
+
+    <!-- 
+    Page title that appears in the browser tab and search engine results.
+    Clear, descriptive titles improve SEO and user experience.
+  -->
+    <title>Contact Us - Intake Form</title>
+
+    <!-- 
+    Viewport meta tag.
+    Makes the page responsive on mobile devices by controlling how the page 
+    is scaled and sized on different screen widths.
+  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+    Internal CSS styles begin here.
+    Using <style> in the head is fine for small projects and learning.
+    For larger projects, external CSS files are preferred.
+  -->
+    <style>
+      /* 
+      Body styles:
+      - Light gray background (#f5f5f5)
+      - Clean sans-serif font (Arial)
+      - Removes default browser margin
+    */
+      body {
+        background-color: #000000;
+        margin: 0px;
+        position: relative;
+        isolation: isolate;
+      }
+
+      .background-video {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+
+      /* 
+      Header section styling:
+      - Blue background (#3b82f6)
+      - Generous padding for breathing room
+      - Content centered horizontally
+    */
+      header {
+        background-color: #050505;
+        padding: 30px;
+        text-align: center;
+      }
+
+      /* 
+      Main heading (h1) inside the header:
+      - Removes default margin
+      - Large, readable font size
+      - White text for contrast on blue background
+    */
+      header h1 {
+        margin: 0;
+        font-size: 42px;
+        font-family: 'Times New Roman', Times, serif;
+        color: #ffa500;
+      }
+
+      /* 
+      Main content container:
+      - Max width of 800px keeps content readable on large screens
+      - Centered using margin: auto
+      - White background creates a "card" effect
+      - Subtle shadow adds depth
+      - Rounded corners for modern look
+    */
+      main {
+        max-width: 800px;
+        margin: 40px auto;
+        background: rgba(66, 66, 66, 0.82);
+        padding: 50px;
+        border-radius: 100px;
+        box-shadow: 1px 20px 8px rgba(5, 5, 5, 0.459);
+      }
+
+      /* 
+      Form heading (h2):
+      - Centered for visual balance
+      - Bottom margin creates space before the form fields
+    */
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #ffa500;
+      }
+
+      /* 
+      Label styling:
+      - display: block makes each label appear on its own line
+      - font-weight: bold improves readability
+      - margin-top adds spacing between fields
+    */
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+        color:  #ffa500;
+      }
+
+      /* 
+      Input field styling:
+      - width: 100% makes inputs fill the container
+      - Good padding for comfortable typing
+      - Light border and rounded corners for clean appearance
+      - Larger font size improves mobile usability
+    */
+      input {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 12px;
+        margin-top: 6px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 2px solid rgb(255, 0, 0);
+        border-radius: 8px;
+        font-size: 16px;
+        background-color: black;
+      }
+
+      /* 
+      Submit button styling:
+      - Full width to match form fields
+      - Blue background matching the header
+      - Rounded pill shape (20px border-radius)
+      - Bold text for emphasis
+      - transition property enables smooth hover animation
+    */
+      button {
+        display: block;
+        box-sizing: border-box;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 25%;
+        padding: 8px;
+        background-color: #c71616;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      /* 
+      Button hover effect:
+      - translateY(-3px) makes the button appear to lift up
+      - Adds a stronger shadow on hover
+      - Creates a nice interactive feel
+    */
+      button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+      }
+
+      /* 
+      Back link styling:
+      - display: block puts it on its own line
+      - Centered text
+      - Blue color matching the theme
+      - Bold for visibility
+      - text-decoration: none removes the underline
+    */
+      .back-link {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        color: #ffa500;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      /* 
+      Footer styling:
+      - Light gray background
+      - Centered text
+      - Smaller font size for secondary information
+    */
+      footer {
+        background-color: rgba(66, 66, 66, 0.82);
+        text-align: center;
+        color: #ffa500;
+        padding: 15px;
+        margin-top: 40px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <video class="background-video" autoplay muted loop playsinline aria-hidden="true">
+      <source src="../DAY2/video/hero-furniture-bg13.mp4" type="video/mp4" />
+    </video>
+
+    <!-- 
+    Page header section.
+    Contains the main title of the page.
+  -->
+    <header>
+      <h1>Contact Us</h1>
+    </header>
+
+    <!-- 
+    Main content area.
+    This is the primary content container on the page.
+  -->
+    <main>
+      <h2>Intake Form</h2>
+
+      <!-- 
+      Form element.
+      method="post" is appropriate for sending form data to a server.
+      action="#" is a placeholder — in a real project this would point to 
+      a backend script or API endpoint (e.g. action="/submit-form").
+    -->
+      <form action="#" method="post">
+        <!-- 
+        First Name field.
+        The "for" attribute on the label matches the "id" on the input.
+        This is important for accessibility (screen readers) and usability 
+        (clicking the label focuses the input).
+      -->
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          placeholder="John"
+          required
+        />
+
+        <!-- Last Name field -->
+        <label for="lastName">Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          placeholder="Doe"
+          required
+        />
+
+        <!-- 
+        Email field.
+        Using type="email" enables browser validation and brings up 
+        the correct keyboard on mobile devices.
+      -->
+        <label for="phone">Phone Number</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="911"
+          required
+        />
+
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="doe@example.com"
+          required
+        />
+
+        <!-- 
+        Phone Number field.
+        type="tel" is the semantically correct type for phone numbers.
+        It also triggers the numeric keyboard on mobile devices.
+      -->
+
+
+        <!-- City field -->
+        <label for="city">City</label>
+        <input
+          type="text"
+          id="city"
+          name="city"
+          placeholder="Oklahoma City"
+          required
+        />
+
+        <!-- 
+        State field.
+        maxlength="2" limits input to two characters (good for state abbreviations).
+      -->
+        <label for="state">State</label>
+        <input
+          type="text"
+          id="state"
+          name="state"
+          placeholder="OK"
+          maxlength="2"
+          required
+        />
+
+        <!-- 
+        Submit button.
+        type="submit" tells the browser this button should submit the form.
+      -->
+        <button type="submit">Submit</button>
+      </form>
+
+      <!-- 
+      Back to Home link.
+      Using a semantic <a> tag with descriptive text.
+      The &larr; creates a left arrow symbol.
+    -->
+      <a href="/DAY2/index.html" class="back-link">&larr; Back to Home</a>
+    </main>
+
+    <!-- 
+    Page footer.
+    Contains copyright information.
+  -->
+    <footer>
+      <p>&copy; 2026 Yoma Slop</p>
+    </footer>
+  </body>
+</html>
