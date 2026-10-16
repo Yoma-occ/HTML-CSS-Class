@@ -1,0 +1,266 @@
+<!-- 
+  HTML5 Document Type Declaration.
+  Tells the browser to use modern HTML5 standards for rendering.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 
+    Character encoding set to UTF-8.
+    Ensures all text and symbols display correctly across devices.
+  -->
+  <meta charset="UTF-8" />
+
+  <!-- 
+    Page title shown in the browser tab.
+    Descriptive titles help with SEO and user orientation.
+  -->
+  <title>Trace's Portfolio projects</title>
+
+  <!-- 
+    Viewport meta tag.
+    Makes the website responsive on mobile, tablet, and desktop devices.
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Internal CSS styles -->
+  <style>
+    /* 
+      Body styles:
+      - Light gray background
+      - Clean Arial font
+      - Removes default browser margin
+    */
+    body {
+      background-color: #070000;
+      border: 2px solid #d40505;
+      font-family: tahoma, urban, sans-serif;
+      margin: 10;
+     }
+
+    /* 
+      Header styling:
+      - Blue background matching the theme
+      - White text for high contrast
+      - Centered content with generous padding
+    */
+    header {
+      background-color: #222222;
+      padding: 30px;
+      text-align:center;
+      color: #c41616;
+    }
+
+    /* 
+      Main heading (h1):
+      - Removes default margin
+      - Large, bold font size for visual impact
+    */
+    h1 {
+      margin: 10px;
+      font-size: 48px;
+      border-bottom-style: inset;
+    }
+
+    /* 
+      Main content container:
+      - Max width of 1000px for comfortable reading
+      - Centered on the page
+      - White background with subtle shadow (card effect)
+      - Rounded corners for modern appearance
+    */
+    main {
+      max-width: 2000px;
+      left: 100px;
+      margin: 40px;
+      padding: 20px;
+      color: #ad0202;
+      background: #4e1010;
+      border-radius: 30px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    /* 
+      Portfolio Grid using CSS Grid:
+      - display: grid turns the container into a grid layout
+      - repeat(auto-fit, minmax(250px, 1fr)) creates a responsive grid:
+        * auto-fit = automatically adjusts number of columns
+        * minmax(250px, 1fr) = each column is at least 250px wide, 
+          but can grow to fill available space
+      - gap: 20px adds consistent spacing between cards
+    */
+    .portfolio-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      
+    }
+       /*grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      line-gap-override: 150px;
+      padding-bottom: 20px;
+    }
+    /* 
+      Individual project card styling:
+      - Light blue background
+      - Padding and rounded corners
+      - Subtle shadow
+      - transition enables smooth hover animation
+    */
+    .project {
+      background: #020202;
+      min-width: 10px;
+      overflow:hidden
+      box-sizing: border-box;
+      flex: 0 1 300px;
+      padding: 30px;
+      border-radius: 30px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    /* 
+      Hover effect on project cards:
+      - translateX(10px) makes the card move to the right slightly when hovered
+      - Creates an interactive, modern feel
+    */
+    .project:hover {
+      transform: scale(1.1);
+    }
+
+    /* 
+      Project image styling:
+      - width: 100% makes image fill the card width
+      - height: 180px sets a consistent height
+      - object-fit: cover prevents image distortion while filling the space
+      - border-radius adds rounded corners
+      - margin-bottom creates space before the button
+    */
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10%;
+      margin-bottom: 10px;
+    }
+
+    /* 
+      "View Project" button styling:
+      - display: inline-block allows padding and margin
+      - Blue background matching the theme
+      - White text with bold weight
+      - transition for smooth color change on hover
+    */
+    .project a {
+      display: inline-block;
+      background: #255aeb;
+      border: 2px solid #050505;
+      color: #2a2121;
+      padding: 8px 14px;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    /* 
+      Button hover effect:
+      - Darker blue on hover for visual feedback
+    */
+    .project a:hover {
+      background: #2563eb;
+    }
+
+    /* 
+      Back to Home link:
+      - display: block puts it on its own line
+      - Centered and bold for visibility
+      - Blue color matching the site theme
+    */
+    .back-link {
+      display: block;
+      margin-top: 30px;
+      text-align: center;
+      font-weight: bold;
+      color: #255aeb;
+      text-decoration: none;
+    }
+
+    /* 
+      Footer styling:
+      - Light gray background
+      - Centered text
+      - Padding for spacing
+    */
+    footer {
+      background-color: #a7a7ac;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Page header with main title -->
+  <header>
+    <h1>Trace's Portfolio</h1>
+  </header>
+
+  <!-- Main content area -->
+  <main>
+    <h2>Featured Projects</h2>
+    
+
+    <!-- 
+      Portfolio grid container.
+      Uses CSS Grid (defined above) to create a responsive layout 
+      that automatically adjusts the number of columns based on screen size.
+    -->
+    <div class="portfolio-grid">
+      
+      <!-- Project Card 1 -->
+      <div class="project">
+        <!-- 
+          Project image using picsum.photos (placeholder service).
+          Always include descriptive alt text for accessibility.
+        -->
+        <img src="https://picsum.photos/id/1018/600/300" alt="Project 1">
+        
+        <!-- 
+          Link to view the project.
+          target="_blank" opens the link in a new tab.
+          In real projects, consider adding rel="noopener" for security.
+        -->
+        <a href="/DAY2/index.html" target="_blank">Furniture Store</a>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="project">
+        <img src="https://picsum.photos/id/180/600/300" alt="Project 2">
+        <a href="" target="_blank">View Project 2</a>
+      </div>
+
+      <!-- Project Card 3 -->
+      <div class="project">
+        <img src="https://picsum.photos/id/251/600/300" alt="Project 3">
+        <a href="https://example.com/project3" target="_blank">View Project 3</a>
+      </div>
+
+      <!-- Project Card 4 -->
+      <div class="project">
+        <img src="https://picsum.photos/id/1015/600/300" alt="Project 4">
+        <a href="https://example.com/project4" target="_blank">View Project 4</a>
+      </div>
+
+    </div>
+
+    <!-- Back to Home navigation link -->
+    <a href="#" class="back-link">&larr; Back to Home</a>
+  </main>
+
+  <!-- Page footer with copyright -->
+  <footer>
+    <p>&copy; 2026 Era Academy</p>
+  </footer>
+</body>
+</html>
