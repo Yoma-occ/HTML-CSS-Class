@@ -1,0 +1,214 @@
+<!-- 
+================================================================================
+LINE 1: <!DOCTYPE html>
+================================================================================
+HTML5 Document Type Declaration.
+Must be the very first line of every modern HTML document.
+-->
+<!doctype html>
+
+<!-- 
+================================================================================
+LINE 2: <html lang="en">
+================================================================================
+Root element of the HTML document.
+lang="en" declares the primary language as English.
+Important for accessibility and SEO.
+-->
+<html lang="en">
+  <!-- 
+================================================================================
+LINE 3: <head>
+================================================================================
+Contains metadata and links to external resources.
+Nothing inside <head> appears visually on the webpage.
+-->
+  <head>
+    <!-- 
+  ================================================================================
+  LINE 4: <meta charset="UTF-8" />
+  ================================================================================
+  Sets the character encoding to UTF-8.
+  Supports all languages and special characters.
+  -->
+    <meta charset="UTF-8" />
+
+    <!-- 
+  ================================================================================
+  LINE 5: <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  ================================================================================
+  Makes the page responsive on mobile devices.
+  width=device-width = use actual device screen width.
+  initial-scale=1.0 = start at normal zoom level.
+  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+  ================================================================================
+  LINE 6: <title>Eras Furniture & Landscape</title>
+  ================================================================================
+  Text displayed in the browser tab.
+  Clear and descriptive title for the website.
+  -->
+    <title>Eras Furniture & Landscape</title>
+
+    <!-- 
+  ================================================================================
+  LINE 7: <link rel="stylesheet" href="styles.css" />
+  ================================================================================
+  Links to an external CSS file.
+  This separates styling from HTML (best practice for larger projects).
+  The file "styles.css" must exist in the same folder as this HTML file.
+  -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <!-- 
+================================================================================
+LINE 8 (after </head>): <body>
+================================================================================
+Contains all visible content of the webpage.
+-->
+  <body>
+    <!-- 
+  ================================================================================
+  HERO SECTION
+  ================================================================================
+  Large introductory section at the top of the page.
+  -->
+    <section class="hero">
+      <h1>Furniture & Landscape</h1>
+    </section>
+
+    <!-- 
+  ================================================================================
+  NAVIGATION BUTTONS
+  ================================================================================
+  Simple navigation links that point to sections on the same page.
+  -->
+    <div class="nav-buttons">
+      <a href="#cards">Learn More</a>
+      <a href="/DAY2/cheatsheets/COITB_CSS_Exam_Cheat_Sheet.pdf" target="_blank">Cheatsheets</a>
+    </div>
+
+    <!-- 
+  ================================================================================
+  HEADER SECTION
+  ================================================================================
+  Contains the main tagline and description.
+  -->
+    <header>
+      <h3>We design and create inviting outdoor environments</h3>
+      <p>Beautiful landscapes and quality furniture for your home</p>
+    </header>
+
+    <!-- 
+  ================================================================================
+  MAIN CONTENT AREA
+  ================================================================================
+  Now contains an image gallery instead of videos.
+  -->
+    <main>
+      <h2>Featured Projects</h2>
+
+
+      <!-- 
+    ================================================================================
+    IMAGE GRID
+    ================================================================================
+    Responsive grid displaying project images using placeholder images.
+    This replaces the previous video section.
+    -->
+      <div class="image-grid">
+        <!-- Project Image 1 -->
+        <div class="image-card">
+          <img
+            src="https://picsum.photos/id/1018/600/400"
+            alt="Modern outdoor patio furniture set with wooden table and chairs"
+          />
+        </div>
+
+        <!-- Project Image 2 -->
+        <div class="image-card">
+          <img
+            src="https://picsum.photos/id/251/600/400"
+            alt="Beautiful landscaped garden with stone pathway and plants"
+          />
+        </div>
+
+        <!-- Project Image 3 -->
+        <div class="image-card">
+          <img
+            src="https://picsum.photos/id/160/600/400"
+            alt="Cozy outdoor lounge area with comfortable seating and lighting"
+          />
+        </div>
+      </div>
+    </main>
+
+    <!-- 
+  ================================================================================
+  CHEATSHEETS SECTION
+  ================================================================================
+  Contains links to reference materials.
+  Uses inline styles for quick demo purposes (not recommended for production).
+  -->
+    <section
+      id="cheatsheets"
+      style="padding: 40px 20px; max-width: 800px; margin: auto"
+    >
+      <h2>Cheatsheets</h2>
+      <p>Reference guides for CSS and JavaScript:</p>
+
+      <!-- Inline styled buttons for CSS and JS cheatsheets -->
+      <div
+        style="
+          display: flex;
+          gap: 20px;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin-top: 20px;
+        "
+      >
+        <a
+          href="/DAY2/cheatsheets/COITB_CSS_Exam_Cheat_Sheet.pdf"
+          style="
+            display: block;
+            padding: 20px;
+            background: linear-gradient(135deg, #3b82f6, #c325eb);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            width: 200px;
+            text-align: center;
+          "
+          >CSS Cheatsheet</a
+        >
+        <a
+          href="/DAY2/cheatsheets/COITB_JavaScript_Exam_Cheat_Sheet.pdf"
+          style="
+            display: block;
+            padding: 20px;
+            background: linear-gradient(135deg, #3b82f6, #c325eb);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            width: 200px;
+            text-align: center;
+          "
+          >JS Cheatsheet</a
+        >
+      </div>
+    </section>
+
+    <!-- 
+  ================================================================================
+  FOOTER SECTION
+  ================================================================================
+  Contains copyright information at the bottom of the page.
+  -->
+    <footer>
+        <p>&copy; <span id="current-year">2026</span> Yoma Slop</p>
+    </footer>
+  </body>
+</html>

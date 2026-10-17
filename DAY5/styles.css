@@ -1,0 +1,204 @@
+/* 
+================================================================================
+CSS FILE: styles.css
+================================================================================
+This is the external stylesheet linked to the Eras Furniture & Landscape HTML page.
+External CSS keeps HTML clean and allows styling to be reused across multiple pages.
+*/
+
+/* 
+================================================================================
+SECTION: RESET & BASE STYLES
+================================================================================
+*/
+
+/* Universal selector - resets default browser margins and padding */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+/* Base styles for the entire webpage */
+body {
+  background-color: #08274770;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  /* Enables smooth scrolling when clicking anchor links */
+  scroll-behavior: smooth;
+}
+
+/* 
+================================================================================
+SECTION: HERO SECTION
+================================================================================
+*/
+
+/* Main hero container with background image */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  /* Background image from Lorem Picsum (placeholder) */
+  background: url("https://picsum.photos/id/1015/2000/800") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Dark overlay on top of the hero image using ::before pseudo-element */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  /* Semi-transparent black overlay for better text readability */
+  background: rgba(0, 0, 0, 0.61);
+  z-index: 1;
+}
+
+/* Main heading inside the hero */
+.hero h1 {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  /* clamp() makes font size responsive between 2.5rem and 4rem */
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  text-shadow: 0px 4px 10px rgba(0,0,0,0.6);
+  margin: 0 20px;
+}
+
+/* 
+================================================================================
+SECTION: NAVIGATION BUTTONS
+================================================================================
+*/
+
+/* Container for the floating navigation buttons */
+.nav-buttons {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+  z-index: 3;
+}
+
+/* Individual navigation button styling */
+.nav-buttons a {
+  background: linear-gradient(135deg, #3b82f6, #c325eb);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.25s ease;
+}
+
+/* Hover effect for navigation buttons */
+.nav-buttons a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 15px rgba(0,0,0,0.25);
+}
+
+/* 
+================================================================================
+SECTION: HEADER
+================================================================================
+*/
+
+header {
+  background: linear-gradient(135deg, #3b82f6, #c325eb);
+  padding: 50px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+/* 
+================================================================================
+SECTION: IMAGE GRID (Featured Projects)
+================================================================================
+Replaced the old video grid section with image cards.
+*/
+
+/* Container using CSS Grid for responsive image layout */
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+  gap: 25px;
+  margin-top: 30px;
+  
+}
+
+/* Individual image card styling */
+.image-card {
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #3b82f6, #c325eb) border-box;
+  overflow: hidden;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.349);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect - lifts the card slightly */
+.image-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 12px 24px rgb(0, 0, 0);
+}
+
+/* Image inside each card */
+.image-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* 
+================================================================================
+SECTION: MAIN CONTENT
+================================================================================
+*/
+
+main {
+  padding: 40px 20px;
+  max-width: 1000px;
+  background-color: #1f2937;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+}
+
+/* 
+================================================================================
+SECTION: FOOTER
+================================================================================
+*/
+
+footer {
+  background: #1f2937;
+  color: #d1d5db;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
